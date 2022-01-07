@@ -11,49 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :branch %>
-    <%= form.text_field :branch %>
+    <%= form.text_field :branch, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :date_created %>
-    <%= form.datetime_select :date_created %>
+    <%= form.datetime_select :date_created, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :severity %>
-    <%= form.text_field :severity %>
+    <%= form.text_field :severity, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :created_by %>
-    <%= form.text_field :created_by %>
+    <%= form.text_field :created_by, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :repro_steps %>
-    <%= form.text_area :repro_steps %>
+    <%= form.text_area :repro_steps, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.text_field :status, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :assigned_to %>
-    <%= form.text_field :assigned_to %>
+    <%= form.text_field :assigned_to, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :bug_user_id, value:current_user.id,  class:"form-control" %>
   </div>
 
   <div class="actions">
