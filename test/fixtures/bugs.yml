@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  branch: MyString
+  date_created: 2022-01-06 11:09:24
+  severity: MyString
+  created_by: MyString
+  description: MyText
+  repro_steps: MyText
+  status: MyString
+  assigned_to: MyString
+
+two:
+  title: MyString
+  branch: MyString
+  date_created: 2022-01-06 11:09:24
+  severity: MyString
+  created_by: MyString
+  description: MyText
+  repro_steps: MyText
+  status: MyString
+  assigned_to: MyString
