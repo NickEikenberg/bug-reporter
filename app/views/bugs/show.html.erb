@@ -1,56 +1,25 @@
-<div class="card" style="width: 18rem;">
+<div class="card m-4" style="width: 100%;">
   <div class="card-body">
     <h5 class="card-title"><%= @bug.title %></h5>
     <h6 class="card-subtitle mb-2 text-muted">Date Reported: <%= @bug.created_at %></h6>
-    <h6 class="">Branch: </h6>
-    <h6>Severity: </h6>
+    <h6 class="text-muted card-subtitle">Reported By: <%= @bug.created_by %></h6>
+    <h6 class="">Branch: <%= @bug.branch %> </h6>
+    <h6>Severity: <%= @bug.severity %> </h6>
+    <h6>Status: <%= @bug.status %></h6>
+    <h6>Assigned To: <%= @bug.assigned_to %></h6>
+    <h5>Description:</h5>
     <p class="card-text"><%= @bug.description %></p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <div class="card border-light mb-3" style="max-width: 100%;">
+      <div class="card-header">Steps to Reproduce</div>
+        <div class="card-body">
+
+          <p class="card-text"><%= @bug.repro_steps %></p>
+        </div>
+      </div>
   </div>
 </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bug.title %>
-</p>
-
-<%= @bug.inspect%>
-
-<p>
-  <strong>Branch:</strong>
-  <%= @bug.branch %>
-</p>
-
-<p>
-  <strong>Severity:</strong>
-  <%= @bug.severity %>
-</p>
-
-<p>
-  <strong>Created by:</strong>
-  <%= @bug.created_by %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bug.description %>
-</p>
-
-<p>
-  <strong>Repro steps:</strong>
-  <%= @bug.repro_steps %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @bug.status %>
-</p>
-
-<p>
-  <strong>Assigned to:</strong>
-  <%= @bug.assigned_to %>
-</p>
+<%# @bug.inspect%>
 
 <%= link_to 'Edit', edit_bug_path(@bug) %> |
 <%= link_to 'Back', bugs_path %>
