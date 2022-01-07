@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_155451) do
+ActiveRecord::Schema.define(version: 2022_01_07_174649) do
 
   create_table "bugs", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2022_01_07_155451) do
     t.text "repro_steps"
     t.string "status"
     t.string "assigned_to"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
