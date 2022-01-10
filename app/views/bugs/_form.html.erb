@@ -48,7 +48,7 @@
 
   <div class="field form-group">
     <%= form.label :assigned_to %>
-    <%= form.text_field :assigned_to, class:"form-control" %>
+    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
   </div>
 
   <div class="field form-group">
