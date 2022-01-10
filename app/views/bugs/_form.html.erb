@@ -21,6 +21,8 @@
     <%= form.select :branch, ["Live Site", "Main", "Dev"], class:"form-control" %>
   </div>
 
+  <%= current_user.username %>
+
   <div class="field form-group">
     <%= form.label :severity %>
     <%= form.select :severity, ["A" , "B" , "C", "Task"], class:"form-control" %>
@@ -28,7 +30,7 @@
 
   <div class="field form-group">
     <%= form.label :created_by %>
-    <%= form.text_field :created_by, class:"form-control" %>
+    <%= form.text_field :created_by, value: current_user.username, :disabled => true,  class:"form-control" %>
   </div>
 
   <div class="field form-group">
