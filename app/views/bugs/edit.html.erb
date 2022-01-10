@@ -3,4 +3,5 @@
 <%= render 'form', bug: @bug %>
 
 <%= link_to 'Show', @bug %> |
+<td><%= link_to 'Destroy', @bug, method: :delete, data: { confirm: 'Are you sure?' } %></td> | 
 <%= link_to 'Back', bugs_path %>
