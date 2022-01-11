@@ -1,4 +1,4 @@
 class Bug < ApplicationRecord
   belongs_to :user
-  # belongs_to :Project
+  belongs_to :project
 end

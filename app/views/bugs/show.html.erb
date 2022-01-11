@@ -7,6 +7,7 @@
     <h6>Severity: <%= @bug.severity %> </h6>
     <h6>Status: <%= @bug.status %></h6>
     <h6>Assigned To: <%= @bug.assigned_to %></h6>
+    <%= @bug.project_id %>
     <h5>Description:</h5>
     <p class="card-text"><%= @bug.description %></p>
     <div class="card border-light mb-3" style="max-width: 100%;">

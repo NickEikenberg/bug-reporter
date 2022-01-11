@@ -21,7 +21,23 @@
     <%= form.select :branch, ["Live Site", "Main", "Dev"], class:"form-control" %>
   </div>
 
-  <%= current_user.username %>
+<%= Project.all.inspect %>
+<%= User.all.inspect %>
+
+
+
+
+ <div class="field form-group">
+    <%= form.label :project %>
+    <%= form.select :project_id, Project.all.collect {|project| [project.id, project.id]}, {}, class:"form-control" %>
+  </div>   
+
+
+  <div class="field form-group">
+    <%= form.label :assigned_to %>
+    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
+  </div>
+
 
   <div class="field form-group">
     <%= form.label :severity %>

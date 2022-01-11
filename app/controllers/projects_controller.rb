@@ -4,10 +4,14 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     @projects = Project.all
+
+    @bugs = Bug.all
   end
 
   # GET /projects/1 or /projects/1.json
   def show
+    
+    @bugs = Bug.select {|bug| bug.project_id == @project.id }
   end
 
   # GET /projects/new

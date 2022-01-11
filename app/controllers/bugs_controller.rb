@@ -13,6 +13,7 @@ class BugsController < ApplicationController
   # GET /bugs/new
   def new
     @bug = Bug.new
+    # @bug = @project.bug.create(published_at: Time.now)
   end
 
   # GET /bugs/1/edit
@@ -65,6 +66,6 @@ class BugsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bug_params
-      params.require(:bug).permit(:title, :branch, :severity, :created_by, :description, :repro_steps, :status, :assigned_to, :user_id)
+      params.require(:bug).permit(:title, :branch, :severity, :created_by, :description, :repro_steps, :status, :assigned_to, :user_id, :project_id)
     end
 end
