@@ -1,51 +1,5 @@
 <h2>User page for <%= @user.username %></h2>
 
+<%= render 'bugs' %>
 
-
-<h5>Bugs reported by <%= @user.username %></h5>
-<table class="table table-striped table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Title</th>
-      <th scope="col">Severity</th>
-      <th scope="col">Status</th>
-      <th scope="col">Assigned To</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.bugs.each do |bug| %>
-    <tr>
-      <th scope="row"><%= bug.id %></th>
-      <td><%= link_to bug.title, bug%></td>
-      <td><%= bug.severity %></td>
-      <td><%= bug.status %></td>
-      <td><%= bug.assigned_to %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h5>Bugs assigned to <%= @user.username %></h5>
-<table class="table table-striped table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Title</th>
-      <th scope="col">Severity</th>
-      <th scope="col">Status</th>
-      <th scope="col">Assigned To</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @assigned.each do |bug| %>
-    <tr>
-      <th scope="row"><%= bug.id %></th>
-      <td><%= link_to bug.title, bug%></td>
-      <td><%= bug.severity %></td>
-      <td><%= bug.status %></td>
-      <td><%= bug.assigned_to %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'assigned' %>
