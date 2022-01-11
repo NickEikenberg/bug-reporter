@@ -1,13 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
+  <strong>Project:</strong>
   <%= @project.name %>
-</p>
+</h1>
 
-<%= @project.inspect %>
+<%
+=begin%>
+ <%= @project.inspect %>
 
-<%= @bugs.inspect %>
+<%= @bugs.inspect %> 
+<%
+=end%>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Branch</th>
+      <th>Severity</th>
+      <th>Created by</th>
+      <th>Status</th>
+      <th>Assigned to</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bugs.each do |bug| %>
+      <tr>
+        <td><%= bug.id %></td>
+        <td><%= link_to bug.title, bug%></td>
+        <td><%= bug.branch %></td>
+        <td><%= bug.severity %></td>
+        <td><%= bug.created_by %></td>
+        <td><%= bug.status %></td>
+        <td><%= bug.assigned_to %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
