@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'users/show'
   resources :projects
   devise_for :users, :path_prefix => 'd'
   resources :users, :only =>[:show]
