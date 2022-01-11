@@ -21,12 +21,6 @@
     <%= form.select :branch, ["Live Site", "Main", "Dev"], class:"form-control" %>
   </div>
 
-<%= Project.all.inspect %>
-<%= User.all.inspect %>
-
-
-
-
  <div class="field form-group">
     <%= form.label :project %>
     <%= form.select :project_id, Project.all.collect {|project| [project.id, project.id]}, {}, class:"form-control" %>

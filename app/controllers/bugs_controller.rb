@@ -4,6 +4,7 @@ class BugsController < ApplicationController
   # GET /bugs or /bugs.json
   def index
     @bugs = Bug.all
+    @bugs_by_status = Bug.all.order('status')
   end
 
   # GET /bugs/1 or /bugs/1.json
