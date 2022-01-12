@@ -23,7 +23,7 @@
 
  <div class="field form-group">
     <%= form.label :project %>
-    <%= form.select :project_id, Project.all.collect {|project| [project.name, project.name]}, {}, class:"form-control" %>
+    <%= form.select :project_id, Project.all.collect {|project| [project.name, project.id]}, {}, class:"form-control" %>
   </div>   
 
 
