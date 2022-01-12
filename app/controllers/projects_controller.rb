@@ -10,8 +10,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+
+    @buggos = Bug.all.order('id DESC')
     
-    @bugs = Bug.select {|bug| bug.project_id == @project.id }
+    @bugs = @buggos.select {|bug| bug.project_id == @project.id }
   end
 
   # GET /projects/new

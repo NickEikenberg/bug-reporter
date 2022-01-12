@@ -14,13 +14,13 @@
           <%= link_to 'Home', root_path, class:"nav-link active"%>
         </li>
 
-        <li class="nav-item">
-          <%= link_to 'Bugs', bugs_path, class:"nav-link"  %>
-        </li>
-
-        <li class="nav-item">
+        <%
+=begin%>
+ <li class="nav-item">
           <%= link_to 'New Bug Report', new_bug_path, class:"nav-link"  %>
-        </li>
+        </li> 
+<%
+=end%>
 
         <li class="nav-item">
           <%= link_to "My Profile", users_show_path, class:"nav-link" %>

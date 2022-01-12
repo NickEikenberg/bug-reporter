@@ -3,7 +3,7 @@ class BugsController < ApplicationController
 
   # GET /bugs or /bugs.json
   def index
-    @bugs = Bug.all
+    @bugs = Bug.all.order('id DESC')
     @bugs_by_status = Bug.all.order('status')
   end
 

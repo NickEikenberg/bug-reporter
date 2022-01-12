@@ -18,12 +18,12 @@
   
   <div class="field">
     <%= form.label :created_by %>
-    <%= form.text_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
+    <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :created_by %>
-    <%= form.text_field :project_owner, value: current_user.id, readonly: true,  class:"form-control" %>
+    <%= form.hidden_field :project_owner, value: current_user.id, readonly: true,  class:"form-control" %>
   </div>
 
   <div class="actions">
