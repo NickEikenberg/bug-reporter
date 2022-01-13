@@ -1,0 +1,68 @@
+<%= form_with(model: bug) do |form| %>
+  <% if bug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+        <% bug.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :branch %>
+    <%= form.select :branch, ["Live Site", "Main", "Dev"], class:"form-control" %>
+  </div>
+
+ <div class="field form-group">
+    <%= form.label :project %>
+    <%= form.select :project_id, Project.all.collect {|project| [project.name, project.id]}, {}, class:"form-control" %>
+  </div>   
+
+
+  <div class="field form-group">
+    <%= form.label :assigned_to %>
+    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
+  </div>
+
+
+  <div class="field form-group">
+    <%= form.label :severity %>
+    <%= form.select :severity, ["A" , "B" , "C", "Task"], class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :repro_steps %>
+    <%= form.text_area :repro_steps, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :status %>
+    <%= form.select :status, ["Open", "Fixed", "Closed", "Fix Verified", "Needs Verify", "Re-Opened"], class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :assigned_to %>
+    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :bug_user_id, value:current_user.id,  class:"form-control", type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
