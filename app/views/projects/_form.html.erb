@@ -26,7 +26,27 @@
     <%= form.hidden_field :project_owner, value: current_user.id, readonly: true,  class:"form-control" %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :members, value: current_user.id %>
+  </div>
+
+  <% if current_user.id == project.project_owner %>
+    <%= form.label :members %>
+    <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
+  <% end %>
+
+  <%= form.label :assigned_to %>
+    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%
+=begin%>
+  a project has one owner
+  a project has many members
+  a project has many bugs
+<%
+=end%>
