@@ -5,6 +5,10 @@
   <%= @project.name %>
 </h1>
 
+<% if current_user.id == @project.project_owner %>
+
+
+
 
 <%
 =begin%>
@@ -45,4 +49,7 @@
 </table>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
+<% else %>
+  <h1>User does not have permission to view this project</h1>
+<% end %>
 <%= link_to 'Back', projects_path %>
