@@ -35,9 +35,6 @@
     <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
   <% end %>
 
-  <%= form.label :assigned_to %>
-    <%= form.select :assigned_to, User.all.collect {|user| [user.username, user.username]}, {}, class:" dropdown-item bg-light" %>
-
   <div class="actions">
     <%= form.submit %>
   </div>

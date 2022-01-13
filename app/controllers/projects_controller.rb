@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
     @buggos = Bug.all.order('id DESC')
     
     @bugs = @buggos.select {|bug| bug.project_id == @project.id }
+
+    @members = Member.all
+    @user_member = @members.find {|member| member.member_id == current_user.id}
+    
   end
 
   # GET /projects/new
