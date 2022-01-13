@@ -17,6 +17,9 @@ class MembersController < ApplicationController
     @users = User.all
 
     @projects = Project.all
+
+    @my_projects = @projects.select {|p| p.project_owner == current_user.id}
+
   end
 
   # GET /members/1/edit

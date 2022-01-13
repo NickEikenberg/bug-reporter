@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :member_id %>
-    <%= form.select :project_id, @projects.collect {|project| [project.name, project.id]} %>
+    <%= form.select :project_id, @my_projects.collect {|project| [project.name, project.id]} %>
   </div>
 
   <div class="actions">
