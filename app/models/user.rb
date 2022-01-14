@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :bugs
-         has_many :projects, optional: true
+         has_many :projects
 end
