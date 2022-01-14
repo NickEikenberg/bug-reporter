@@ -30,13 +30,17 @@
     <%= form.hidden_field :members, value: current_user.id %>
   </div>
 
-  <% if project.project_owner %>
+  <%
+=begin%>
+ <% if project.project_owner %>
 
   <% if current_user.id == project.project_owner %>
       <%= form.label :members %>
       <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
     <% end %>
-  <% end %>
+  <% end %> 
+<%
+=end%>
 
   <div class="actions">
     <%= form.submit %>
