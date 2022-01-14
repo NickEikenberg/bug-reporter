@@ -16,14 +16,10 @@
     <%= form.text_field :name %>
   </div>
   
-  <%
-=begin%>
- <div class="field">
+  <div class="field">
 
     <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
-  </div> 
-<%
-=end%>
+  </div>
 
   <div class="field">
 
@@ -34,8 +30,6 @@
     <%= form.hidden_field :members, value: current_user.id %>
   </div>
 
-  <%
-=begin%>
  <% if project.project_owner %>
 
   <% if current_user.id == project.project_owner %>
@@ -43,8 +37,7 @@
       <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
     <% end %>
   <% end %> 
-<%
-=end%>
+
 
   <div class="actions">
     <%= form.submit %>
