@@ -17,12 +17,12 @@
   </div>
   
   <div class="field">
-    <%= form.label :created_by %>
+
     <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :created_by %>
+
     <%= form.hidden_field :project_owner, value: current_user.id, readonly: true,  class:"form-control" %>
   </div>
 
@@ -30,9 +30,12 @@
     <%= form.hidden_field :members, value: current_user.id %>
   </div>
 
+  <% if project %>
+
   <% if current_user.id == project.project_owner %>
-    <%= form.label :members %>
-    <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
+      <%= form.label :members %>
+      <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
+    <% end %>
   <% end %>
 
   <div class="actions">
@@ -40,10 +43,3 @@
   </div>
 <% end %>
 
-<%
-=begin%>
-  a project has one owner
-  a project has many members
-  a project has many bugs
-<%
-=end%>
