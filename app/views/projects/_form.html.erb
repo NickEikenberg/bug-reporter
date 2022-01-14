@@ -30,7 +30,7 @@
     <%= form.hidden_field :members, value: current_user.id %>
   </div>
 
-  <% if project %>
+  <% if project.project_owner %>
 
   <% if current_user.id == project.project_owner %>
       <%= form.label :members %>
