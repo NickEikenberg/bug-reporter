@@ -16,10 +16,14 @@
     <%= form.text_field :name %>
   </div>
   
-  <div class="field">
+  <%
+=begin%>
+ <div class="field">
 
     <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div class="field">
 
