@@ -7,7 +7,6 @@
 
 <% if current_user.id == @project.project_owner || @user_member.project_id == @project.id %>
 
-<%= @user_member.inspect %>
 
 <%= link_to 'Report New Bug', new_bug_path %>
 <%= link_to 'Add Project Member', new_member_path %>
@@ -45,4 +44,4 @@
 <% else %>
   <h1>User does not have permission to view this project</h1>
 <% end %>
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', root_path %>
