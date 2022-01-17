@@ -11,15 +11,18 @@
     </div>
   <% end %>
 
+  <%= project.inspect %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  
-  <div class="field">
 
-    <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
-  </div>
+  <% if project&.created_by %>
+    <div class="field">
+      <%= form.hidden_field :created_by, value: current_user.username, readonly: true,  class:"form-control" %>
+    </div>
+  <% end %>
 
   <div class="field">
 
@@ -29,6 +32,14 @@
   <div class="field">
     <%= form.hidden_field :members, value: current_user.id %>
   </div>
+
+ <% if project.project_owner %>
+
+  <% if current_user.id == project.project_owner %>
+      <%= form.label :members %>
+      <%= form.select :members, User.all.collect {|user| [user.username, user.id]}, {}, class:"dropdown-item bg-light" %>
+    <% end %>
+  <% end %> 
 
 
   <div class="actions">

@@ -5,6 +5,8 @@
   <%= @project.name %>
 </h1>
 
+<%= @project.inspect %>
+
 <% if current_user.id == @project.project_owner || @user_member.project_id == @project.id %>
 
 

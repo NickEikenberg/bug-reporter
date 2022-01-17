@@ -78,3 +78,6 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:name, :created_by, :project_owner, :members)
     end
 end
+
+
+# model&.name
